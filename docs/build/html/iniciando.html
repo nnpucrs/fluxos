@@ -1,42 +1,81 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="pt-br" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>Passos iniciais &#8212; fluxos_genim 31/10/2021 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passos iniciais &mdash; GENIM 31/10/2021 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Processamento de imagens anatômicas" href="processamento.html" />
-    <link rel="prev" title="Grupo de Pesquisa em Epidemiologia, Neurologia e Imunologia (GENIM)" href="index.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Grupo de Pesquisa em Epidemiologia, Neurologia e Imunologia (GENIM)" href="index.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> GENIM
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Passos iniciais</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#softwares">Softwares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dicom-para-nifti">DICOM para Nifti</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="processamento.html">Processamento de imagens anatômicas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mtr.html">Mapas de razão de transferência de magnetização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dti.html">Processamento de imagens por tensor de difusão</a></li>
+</ul>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+        </div>
+      </div>
+    </nav>
 
-          <div class="body" role="main">
-            
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GENIM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Passos iniciais</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/iniciando.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="passos-iniciais">
-<h1>Passos iniciais<a class="headerlink" href="#passos-iniciais" title="Permalink to this headline">¶</a></h1>
+<h1>Passos iniciais<a class="headerlink" href="#passos-iniciais" title="Permalink to this headline"></a></h1>
 <section id="softwares">
-<h2>Softwares<a class="headerlink" href="#softwares" title="Permalink to this headline">¶</a></h2>
+<h2>Softwares<a class="headerlink" href="#softwares" title="Permalink to this headline"></a></h2>
 <div class="line-block">
 <div class="line">Os worflows mais importantes descritos nos documentos a seguir são baseados em funções de softwares externos que incluem principalmente:</div>
 </div>
@@ -65,7 +104,7 @@ Call this script from the top of the files folder
 <p>Se houver este resultado, os scripts estão instalados, em caso de erro entrar em contato com <a class="reference external" href="mailto:rafaelcasommer&#37;&#52;&#48;gmail&#46;com">rafaelcasommer<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 </section>
 <section id="dicom-para-nifti">
-<h2>DICOM para Nifti<a class="headerlink" href="#dicom-para-nifti" title="Permalink to this headline">¶</a></h2>
+<h2>DICOM para Nifti<a class="headerlink" href="#dicom-para-nifti" title="Permalink to this headline"></a></h2>
 <p>Arquivos adquiridos na ressonância ficam disponibilizados em formato DICOM o que pode ser bastante util para armazenamento de informações de identificação, metadados, etc… Porém não são simples de analisar e não compartilhaveis, visto que possuem informações sigilosas dos pacientes. Portanto, grande parte dos softwares de neuroimagem trabalham com imagens de formato Nifti.</p>
 <p>A documentação do formato pode ser encontrada em: <a class="reference external" href="https://nifti.nimh.nih.gov/">https://nifti.nimh.nih.gov/</a></p>
 <p>É importante então convertermos nossas imagens de dicom para nifti. Eu costumo utilizar o programa do mrtrix <strong>mrconvert</strong> para tal. Geralmente basta:</p>
@@ -77,77 +116,34 @@ Call this script from the top of the files folder
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Grupo de Pesquisa em Epidemiologia, Neurologia e Imunologia (GENIM)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="processamento.html" class="btn btn-neutral float-right" title="Processamento de imagens anatômicas" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, rafael canani sommer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">fluxos_genim</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Passos iniciais</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#softwares">Softwares</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#dicom-para-nifti">DICOM para Nifti</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="processamento.html">Processamento de imagens anatômicas</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dti.html">Processamento de imagens por tensor de difusão</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Grupo de Pesquisa em Epidemiologia, Neurologia e Imunologia (GENIM)</a></li>
-      <li>Next: <a href="processamento.html" title="next chapter">Processamento de imagens anatômicas</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, rafael canani sommer.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/iniciando.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

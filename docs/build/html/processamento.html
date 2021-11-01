@@ -1,42 +1,85 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="pt-br" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>Processamento de imagens anatômicas &#8212; fluxos_genim 31/10/2021 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Processamento de imagens anatômicas &mdash; GENIM 31/10/2021 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Processamento de imagens por tensor de difusão" href="dti.html" />
-    <link rel="prev" title="Passos iniciais" href="iniciando.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="next" title="Mapas de razão de transferência de magnetização" href="mtr.html" />
+    <link rel="prev" title="Passos iniciais" href="iniciando.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> GENIM
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="iniciando.html">Passos iniciais</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Processamento de imagens anatômicas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#objetivos">Objetivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mapa-de-lesoes">Mapa de lesões</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#volumetrias-com-sienax-e-first">Volumetrias com SIENAX e FIRST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#siena-para-volumes-longitudinais">SIENA para volumes longitudinais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#freesurfer">Freesurfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mtr.html">Mapas de razão de transferência de magnetização</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dti.html">Processamento de imagens por tensor de difusão</a></li>
+</ul>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+        </div>
+      </div>
+    </nav>
 
-          <div class="body" role="main">
-            
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GENIM</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Processamento de imagens anatômicas</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/processamento.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="processamento-de-imagens-anatomicas">
-<h1>Processamento de imagens anatômicas<a class="headerlink" href="#processamento-de-imagens-anatomicas" title="Permalink to this headline">¶</a></h1>
+<h1>Processamento de imagens anatômicas<a class="headerlink" href="#processamento-de-imagens-anatomicas" title="Permalink to this headline"></a></h1>
 <section id="objetivos">
-<h2>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this headline">¶</a></h2>
+<h2>Objetivos<a class="headerlink" href="#objetivos" title="Permalink to this headline"></a></h2>
 <p>Este tópico se destina ao processamento de imagens anatômicas de pacientes com esclerose múltipla ou outras patologias desmielinizantes. Ao final do protocolo nosso objetivo é obter os seguintes dados:</p>
 <ul class="simple">
 <li><p>Mapa de lesões (probabilístico e binário)</p></li>
@@ -47,7 +90,7 @@
 </ul>
 </section>
 <section id="mapa-de-lesoes">
-<h2>Mapa de lesões<a class="headerlink" href="#mapa-de-lesoes" title="Permalink to this headline">¶</a></h2>
+<h2>Mapa de lesões<a class="headerlink" href="#mapa-de-lesoes" title="Permalink to this headline"></a></h2>
 <p>Inicialmente, costumo utilizar um script em R que realiza os seguintes procedimentos:</p>
 <ol class="arabic simple">
 <li><p>Extração de calota craniana</p></li>
@@ -74,7 +117,7 @@ visualizado em <a class="reference external" href="https://github.com/rafaelsomm
 caso seu mapa não fique adequado, é possível customizar os parâmetros do script</p>
 </section>
 <section id="volumetrias-com-sienax-e-first">
-<h2>Volumetrias com SIENAX e FIRST<a class="headerlink" href="#volumetrias-com-sienax-e-first" title="Permalink to this headline">¶</a></h2>
+<h2>Volumetrias com SIENAX e FIRST<a class="headerlink" href="#volumetrias-com-sienax-e-first" title="Permalink to this headline"></a></h2>
 <p>Para cálculo de volume de substância branca e cinzenta costumo utilizar o SIENAX, visto que o mesmo
 nos proporciona tanto os resultados normalizados quanto os valores absolutos,
 e se trata de um algoritmo relativamente rápido e acurado de segmentação.</p>
@@ -184,7 +227,7 @@ $ fsleyes t1.nii.gz first_results/results_all_fast_firstseg.nii.gz -cm subcortic
 <img alt="_images/first.png" src="_images/first.png" />
 </section>
 <section id="siena-para-volumes-longitudinais">
-<h2>SIENA para volumes longitudinais<a class="headerlink" href="#siena-para-volumes-longitudinais" title="Permalink to this headline">¶</a></h2>
+<h2>SIENA para volumes longitudinais<a class="headerlink" href="#siena-para-volumes-longitudinais" title="Permalink to this headline"></a></h2>
 <p>Uma opção interessante caso o interesse seja a evolução do volume cerebral
 total ao longo do tempo é a utilização do SIENA.
 Aqui utilizamos um algoritimo para estimar a mudança de volume cerebral entre dois
@@ -204,7 +247,7 @@ Uma descrição detalhada pode ser encontrada em:</p>
 mas isto pode ser alterado conforme sua preferência e a manipulação de <strong>bet</strong> (<a class="reference external" href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide">https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/BET/UserGuide</a>)</p>
 </section>
 <section id="freesurfer">
-<h2>Freesurfer<a class="headerlink" href="#freesurfer" title="Permalink to this headline">¶</a></h2>
+<h2>Freesurfer<a class="headerlink" href="#freesurfer" title="Permalink to this headline"></a></h2>
 <p>Ainda sobre opções de processamento de imagens estruturais volumétrics, um dos algoritmos mais completos
 para estimação tanto de volumes quanto medidas de superfície é <strong>recon-all -all</strong> do Freesurfer
 A personalização de parâmetros aqui é ampla e pode ser revisada em: <a class="reference external" href="https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all">https://surfer.nmr.mgh.harvard.edu/fswiki/recon-all</a>
@@ -226,7 +269,7 @@ Contudo, o algoritimo do Freesurfer, invariavelmente necessita de correções
 manuais posteriores em alguns pontos específicos</p>
 </section>
 <section id="troubleshooting">
-<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline"></a></h2>
 <p>Após o processamento, geralmente o usuário necessita realizar algumas correções manuais de qualidade em alguns passos,
 são eles:</p>
 <ol class="arabic simple">
@@ -246,81 +289,34 @@ são eles:</p>
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="iniciando.html" class="btn btn-neutral float-left" title="Passos iniciais" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mtr.html" class="btn btn-neutral float-right" title="Mapas de razão de transferência de magnetização" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, rafael canani sommer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">fluxos_genim</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="iniciando.html">Passos iniciais</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Processamento de imagens anatômicas</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#objetivos">Objetivos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mapa-de-lesoes">Mapa de lesões</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#volumetrias-com-sienax-e-first">Volumetrias com SIENAX e FIRST</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#siena-para-volumes-longitudinais">SIENA para volumes longitudinais</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#freesurfer">Freesurfer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="dti.html">Processamento de imagens por tensor de difusão</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="iniciando.html" title="previous chapter">Passos iniciais</a></li>
-      <li>Next: <a href="dti.html" title="next chapter">Processamento de imagens por tensor de difusão</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, rafael canani sommer.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/processamento.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
